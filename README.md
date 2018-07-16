@@ -1,5 +1,5 @@
 # HPC算法模拟主要流程
-     注1：由于HPL引入了MPI并行操作，CPU多个核心之间通信过程复杂，通信时间暂时没有考虑，因此本流程仅考虑单CPU，单核，单GPU的HPL执行过程。
+     注1：由于HPL引入了MPI并行操作，CPU多个核心之间通信过程复杂，通信时间暂时没有考虑，<span style="color:red">*因此本流程仅考虑单CPU，单核，单GPU的HPL执行过程。*</span>
      注2：通过对比CPU版本的HPL与NV版本的HPL源码发现NV版本实现CPU与GPU计算负载均衡的方式是重新编译了HPL_dgemm和HPL_dtrsm函数，主要由cuda_dgemm来实现自动负载均衡，因此在模拟HPL计算时，我们认为执行HPL_dgemm的时候，我们考虑该函数由cpu_dgemm和gpu_dgemm两个函数构成，并将会根据CPU和GPU计算力自动进行负载均衡分别调用cpu_dgemm和gpu_dgemm。
      注3：系统主要耗时主要由dtrsm、dgemm以及CPU和GPU之间的通信开销构成，本模型中尚未考虑其他因素造成的耗时。
   
