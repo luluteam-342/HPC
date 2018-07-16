@@ -23,7 +23,7 @@
 >>>4.2.2.4.GPU将运算完成的结果传输回内存耗时t5i<br>
 
 >5.循环结束，HPL主要耗时部分计算完毕，剩余一些其他操作比如对内存空间的释放等暂时不考虑耗时<br>
->6.计时结束，即t≈∑_i▒〖(t1i+〗 max(tcdti,tgdti)+t2i+t3i+max(tcdgi,tgdgi)+t4i+t5i)<br>
+>6.计时结束，即 ![](https://github.com/luluteam-342/HPC/raw/master/formula.png) <br>
 >7.根据总计算时间计算出系统的浮点运算速率<br>
 
 以上是粗略估计HPL总体计算时间的流程图
